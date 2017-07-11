@@ -1,11 +1,15 @@
-  class JamsController < ApplicationController
-  before_action :set_cocktail, only: [:show, :edit, :update, :destroy]
+
+class JamsController < ApplicationController
+  before_action :set_jam, only: [:show, :edit, :update, :destroy]
+
 
   def index
     @jams = Jam.all
   end
 
   def show
+    @user = @jam.user
+    @comments = @jam.comments
   end
 
   def new

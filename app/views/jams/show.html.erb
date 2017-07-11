@@ -1,10 +1,58 @@
-div class="container">
+
+<div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <h1><%= @jam.name %></h1
-      <%= cl_image_tag @product.photo, height: 300, width: 400, crop: :fill %>
+      <h1><%= @jam.name %></h1>
+      
+      <!-- Pictures of the product -->
 
-      <%= link_to 'Back', jams_path %>
+      <div class="pictures">
+        <%= cl_image_tag @jam.photo, height: 300, width: 400, crop: :fill %>
+      </div>
+    
     </div>
   </div>
+
+<!-- Information on the user -->
+<div class="information">
+
+  <div class="user-info">
+
+    <div class="avatar-info">
+      <% avatar_url = "http://placehold.it/30x30" %>
+      <%= image_tag avatar_url, class: "avatar" %>
+    </div>
+
+    <div class="avatar-name">
+      <span><%= @user.email %></span>
+      <span><%= @jam.name %></span>
+    </div>
+
+  </div>
+
+
+  <div class="discription-info">
+    <span><%= @jam.description %></span>
+
+    <p><%# @user.location %>
+    <br>
+    <%= @jam.created_at %>
+    </p>
+  </div>
+
+<!--   information about the price of the product -->
+  <div class="buying-info">
+    <span></span>
+  </div>
+
+<!--   Comments section -->
+  <div class="comment-info">
+    <ul>
+      <% @comments.each do |comment| %>
+        <li><%= comment.content %></li>
+      <% end %>
+    </ul>
+  </div>
+  <%= link_to 'Back', jams_path %>
+
 </div>
