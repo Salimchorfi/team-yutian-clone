@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :comments, only: [:destroy]
 
+  root to: 'jams#index'
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'jams#index'
