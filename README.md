@@ -1,3 +1,3 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by Team Yutian!
+Guns and jams. For the niche market.
 
 Happy birthday yutian!
