@@ -37,8 +37,9 @@
 <!--   Comments section -->
   <div class="comment-info">
     <ul>
-      <% @jam.comment.each do |comment| %>
-        <li><% comment[:content] %></li>
+      <% @comments.each do |comment| %>
+        <li><% comment.content %></li>
+      <% end %>
     </ul>
   </div>
 

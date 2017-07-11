@@ -5,3 +5,36 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require "faker"
+
+puts 'Creating 5 fake users...'
+
+5.times do
+  user = User.create!(
+    email: Faker::Internet.email,
+    password: '0123456789',
+  )
+  4.times do
+    jams = Jam.create!(
+    name: Faker::Food.ingredient,
+    price: (5..100).to_a.sample,
+    description: Faker::Food.spice,
+    user: user
+  )
+  end
+end
+
+# puts 'Creating 20 fake jams...'
+
+# 20.times do
+#   jams = Jam.new(
+#     name: Faker::Food.ingredient,
+#     price: (5..100).to_a.sample,
+#     description: Faker::Food.spice,
+#     user_id: Yutian
+#   )
+#   jams.save!
+# end
+
+puts 'Finished!'
