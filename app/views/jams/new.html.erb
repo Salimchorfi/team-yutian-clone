@@ -1,13 +1,17 @@
-<div class="container">
+<%= render 'layouts/navbar' %>
+<div class="container image">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-
-      <h1>New Jam</h1>
-
-      <%= render 'form' %>
-
-      <%= link_to 'Back', jams_path %>
-
+    <div class="col-xs-12 col-sm-4">
+      <%= cl_image_tag("gypsy-queen_ahqu9f",
+      width: 400, height: 300, crop: :fill) %>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <%= cl_image_tag("gypsy-queen_ahqu9f",
+      width: 400, height: 300, crop: :fill) %>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <%= cl_image_tag("gypsy-queen_ahqu9f",
+      width: 400, height: 300, crop: :fill) %>
     </div>
   </div>
 </div>
