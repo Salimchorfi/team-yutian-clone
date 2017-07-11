@@ -1,6 +1,6 @@
 <div class="navbar-wagon">
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png" %>
+    <%= image_tag "yujams_logo.png" %>
   <% end %>
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
@@ -14,11 +14,16 @@
       <% end %>
     <% else %>
 
-    <form class="searchbox">
-        <input type="search" placeholder="Search......" name="search" class="searchbox-input" onkeyup="buttonUp();" required>
-        <input type="submit" class="searchbox-submit" value="GO">
-        <span class="navbar-search searchbox-icon">GO</span>
-    </form>
+    <div class="nav-options">
+<!--       <form class="searchbox">
+          <input type="search" placeholder="Search for jams" name="search" class="searchbox-input" onkeyup="buttonUp();" required>
+          <input type="submit" class="searchbox-submit" value="GO">
+          <span class="navbar-search searchbox-icon">GO</span>
+      </form> -->
+      <a href="#"><span>Search</span></a>
+      <a href="#"><span>Profile</span></a>
+      <a href="#"><span>Logout</span></a>
+    </div>
 
   </div>
 </div>

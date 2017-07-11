@@ -1,48 +1,59 @@
-<!-- Pictures of the product -->
-<div class="pictures">
-  <%# cl_image_tag @jam.photo, height: 300, width: 400, crop: :fill, class: "show-img" %>
-</div>
+<!-- Navbar -->
+<%= render 'layouts/navbar' %>
 
-<!-- Information on the user -->
-<div class="information">
+<div class="show-container">
+  <!-- Pictures of the product -->
+  <div class="pictures">
+    <%# cl_image_tag @jam.photo, height: 300, width: 400, crop: :fill, class: "show-img" %>
+    <% img_url = "http://placehold.it/450x450" %>
+        <%= image_tag img_url %>
+  </div>
 
-  <div class="user-info">
+  <!-- Information on the user -->
+  <div class="information">
 
-    <div class="avatar-info">
-      <% avatar_url = "http://placehold.it/30x30" %>
-      <%= image_tag avatar_url, class: "avatar" %>
+    <div class="user-info">
+
+      <div class="avatar-info">
+        <% avatar_url = "http://placehold.it/71x71" %>
+        <%= image_tag avatar_url, class: "avatar-custom" %>
+      </div>
+
+      <div class="avatar-name">
+        <p><strong><%= @user.email.split("@")[0] %></strong>
+          <br>
+          <strong><%= @jam.name %></strong>
+        </p>
+      </div>
+
     </div>
 
-    <div class="avatar-name">
-      <span><%= @user.email %></span>
-      <span><%= @jam.name %></span>
+
+    <div class="discription-info">
+      <span><%= @jam.description %></span>
+    </div>
+    <div class="mata-info">
+      <p><%# @user.location %>
+      <br>
+      <%= time_ago_in_words(@jam.created_at) %>
+      </p>
     </div>
 
+  <!--   information about the price of the product -->
+    <div class="buying-info">
+      <span id="buy">Buy</span>
+      <span id="price"><%= "#{@jam.price} champignon" %></span>
+    </div>
+
+  <!--   Comments section -->
+    <div class="comment-info">
+      <ul>
+        <% @comments.each do |comment| %>
+          <li><strong><%= "#{@user.email.split("@")[0]}: " %></strong> <%="#{comment.content}" %></li>
+        <% end %>
+      </ul>
+    </div>
+    <%= link_to 'Back', jams_path %>
+
   </div>
-
-
-  <div class="discription-info">
-    <span><%= @jam.description %></span>
-
-    <p><%# @user.location %>
-    <br>
-    <%= @jam.created_at %>
-    </p>
-  </div>
-
-<!--   information about the price of the product -->
-  <div class="buying-info">
-    <span></span>
-  </div>
-
-<!--   Comments section -->
-  <div class="comment-info">
-    <ul>
-      <% @comments.each do |comment| %>
-        <li><%= comment.content %></li>
-      <% end %>
-    </ul>
-  </div>
-  <%= link_to 'Back', jams_path %>
-
 </div>
