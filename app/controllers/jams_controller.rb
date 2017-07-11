@@ -6,6 +6,9 @@ class JamsController < ApplicationController
   end
 
   def show
+    @jams = Jam.all
+    @user = @jam.user
+    @comments = @jam.comments
   end
 
   def new
