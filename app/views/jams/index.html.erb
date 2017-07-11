@@ -1,2 +1,12 @@
-<h1>Jams#index</h1>
-<p>Find me in app/views/jams/index.html.erb</p>
+<h1>Explore Jams</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <% @jams.each do |j|%>
+        <%= render "jam", jam: j %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
