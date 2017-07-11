@@ -4,7 +4,7 @@
 <div class="show-container">
   <!-- Pictures of the product -->
   <div class="pictures">
-    <%# cl_image_tag @jam.photo, height: 300, width: 400, crop: :fill, class: "show-img" %>
+    <% cl_image_tag @jam.photo, height: 300, width: 400, crop: :fill, class: "show-img" %>
     <% img_url = "http://placehold.it/450x450" %>
         <%= image_tag img_url %>
   </div>
