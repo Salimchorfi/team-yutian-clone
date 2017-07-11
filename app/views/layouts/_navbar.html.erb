@@ -15,7 +15,7 @@
        <div class="nav-options">
         <a href="#"><span>Search</span></a>
         <a href="#"><span>Profile</span></a>
-        <a href="#"><span>Logout</span></a>
+        <a href="#"><span><%= link_to('Logout', destroy_user_session_path, method: :delete) %></span></a>
       </div>
     </div>
 
@@ -28,7 +28,7 @@
           <span class="navbar-search searchbox-icon">GO</span>
       </form> -->
       <a href="#"><span>Search</span></a>
-      <a href="#"><span>Login</span></a>
+      <a href="#"><span><%= link_to('Login', new_user_session_path) %></span></a>
     </div>
 
     <% end %>
