@@ -11,7 +11,14 @@
       <%= link_to t(".sign_in", default: "Log out"), "#", class: "navbar-wagon-item navbar-wagon-link" %>
        <%= link_to t(".top_call_to_action", default: "Profile"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
        <%= link_to t(".top_call_to_action", default: "Search"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
-      <% end %>
+
+       <div class="nav-options">
+        <a href="#"><span>Search</span></a>
+        <a href="#"><span>Profile</span></a>
+        <a href="#"><span>Logout</span></a>
+      </div>
+    </div>
+
     <% else %>
 
     <div class="nav-options">
@@ -21,9 +28,10 @@
           <span class="navbar-search searchbox-icon">GO</span>
       </form> -->
       <a href="#"><span>Search</span></a>
-      <a href="#"><span>Profile</span></a>
-      <a href="#"><span>Logout</span></a>
+      <a href="#"><span>Login</span></a>
     </div>
+
+    <% end %>
 
   </div>
 </div>
