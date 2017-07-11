@@ -1,0 +1,24 @@
+<div class="navbar-wagon">
+  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+    <%= image_tag "logo.png" %>
+  <% end %>
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+    <!-- Different navigation if login or not -->
+
+    <% if user_signed_in? %>
+
+      <%= link_to t(".sign_in", default: "Log out"), "#", class: "navbar-wagon-item navbar-wagon-link" %>
+       <%= link_to t(".top_call_to_action", default: "Profile"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+       <%= link_to t(".top_call_to_action", default: "Search"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+      <% end %>
+    <% else %>
+
+    <form class="searchbox">
+        <input type="search" placeholder="Search......" name="search" class="searchbox-input" onkeyup="buttonUp();" required>
+        <input type="submit" class="searchbox-submit" value="GO">
+        <span class="navbar-search searchbox-icon">GO</span>
+    </form>
+
+  </div>
+</div>
