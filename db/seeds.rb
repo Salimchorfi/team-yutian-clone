@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require "faker"
+Jam.destroy_all
+
 
 puts 'Creating 5 fake users...'
 
@@ -17,11 +19,18 @@ puts 'Creating 5 fake users...'
   )
   4.times do
     jams = Jam.create!(
-    name: Faker::Food.ingredient,
-    price: (5..100).to_a.sample,
-    description: Faker::Food.spice,
-    user: user
+      name: Faker::Food.ingredient,
+      price: (5..100).to_a.sample,
+      description: Faker::Food.spice,
+      user: user
   )
+    5.times do
+      comments = Comment.create!(
+        content: Faker::ChuckNorris.fact,
+        user: user,
+        jam: jams
+      )
+    end
   end
 end
 
