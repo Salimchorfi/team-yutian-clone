@@ -1,7 +1,17 @@
-<!-- Pictures of the product -->
-<div class="pictures">
-  <%# cl_image_tag @jam.photo, height: 300, width: 400, crop: :fill, class: "show-img" %>
-</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <h1><%= @jam.name %></h1>
+      
+      <!-- Pictures of the product -->
+
+      <div class="pictures">
+        <%= cl_image_tag @jam.photo, height: 300, width: 400, crop: :fill %>
+      </div>
+    
+    </div>
+  </div>
 
 <!-- Information on the user -->
 <div class="information">
