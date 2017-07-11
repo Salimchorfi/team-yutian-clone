@@ -1,5 +1,5 @@
 class Jam < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   has_many :comments, dependent: :destroy
   has_one :trade
 
