@@ -8,14 +8,12 @@
 
     <% if user_signed_in? %>
 
-      <%= link_to t(".sign_in", default: "Log out"), "#", class: "navbar-wagon-item navbar-wagon-link" %>
-       <%= link_to t(".top_call_to_action", default: "Profile"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
-       <%= link_to t(".top_call_to_action", default: "Search"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
 
-       <div class="nav-options">
-        <a href="#"><span>Search</span></a>
-        <a href="#"><span>Profile</span></a>
-        <a href="#"><span><%= link_to('Logout', destroy_user_session_path, method: :delete) %></span></a>
+      <div class="nav-options">
+        <a href="#"><span><%= link_to t(".top_call_to_action", default: "Search") %></span></a>
+        <a href="#"><span><%= link_to t(".top_call_to_action", default: "Profile") %></span></a>
+        <a href="#"><span>Create</span></a>
+        <a ><span><%= link_to('Logout', destroy_user_session_path, method: :delete) %></span></a>
       </div>
     </div>
 
