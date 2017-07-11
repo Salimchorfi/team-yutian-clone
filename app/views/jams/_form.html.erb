@@ -18,6 +18,10 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </p>
+  <p>
+    <%= f.file_field :photo %>
+    <%= f.hidden_field :photo_cache %>
+  </p>
 
   <p>
     <%= f.submit %>

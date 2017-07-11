@@ -1,4 +1,4 @@
-class JamsController < ApplicationController
+  class JamsController < ApplicationController
   before_action :set_cocktail, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -39,7 +39,7 @@ class JamsController < ApplicationController
   private
 
     def jam_params
-      params.require(:jam).permit(:name)
+      params.require(:jam).permit(:name, :photo, :photo_cache)
     end
 
     def set_jam
