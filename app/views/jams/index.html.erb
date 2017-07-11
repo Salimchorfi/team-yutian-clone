@@ -1,45 +1,66 @@
+<!-- Navbar -->
+<%= render 'layouts/navbar' %>
 
- <html>
+<div class="index-container">
+  <span>Hello, and welcome to our community. We are here to satisfy your every jam related need. We also sell guns. Please, make yourself at home.</span>
 
-  <head>
+  <h1>
+    <span>Explore jams</span>
+  </h1>
+
+  <div class="index-image">
+    <ul>
+      <li>
+        <a href="">
+          <%# @images.each do |image| %>
+            <%# image
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
 
 
-  </head>
 
-  <body>
 
-    <div class='text-left'>
 
-    <!--   <p>
-        <% if user_signed_in? %>
-          <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-        <% else %>
-          <%= link_to('Login', new_user_session_path)  %>
-        <% end %>
-      </p>
- -->
-      <p>Hello, and welcome to our community. We are here to satisfy your every jam related need. We also sell guns. Please, make yourself at home.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class='text-left'>
+
+  <p>Hello, and welcome to our community. We are here to satisfy your every jam related need. We also sell guns. Please, make yourself at home.</p>
+</div>
+
+<h3><b>Explore Jams</b></h3>
+
+<input type="text" name="search" placeholder="Search..">
+
+
+<div class="text-center padded">
+  <%= link_to "Post a jam", new_jam_path, class: "btn btn-primary" %>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-6 col-sm-3 col-xs-1">
+      <% @jams.each do |j|%>
+        <%= render "jam", jam: j %>
+      <% end %>
     </div>
-
-    <h3><b>Explore Jams</b></h3>
-
-    <input type="text" name="search" placeholder="Search..">
-
-
-    <div class="text-center padded">
-      <%= link_to "Post a jam", new_jam_path, class: "btn btn-primary" %>
-    </div>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-md-6 col-sm-3 col-xs-1">
-          <% @jams.each do |j|%>
-            <%= render "jam", jam: j %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-
-  </body>
-
-</html>
+  </div>
+</div>
