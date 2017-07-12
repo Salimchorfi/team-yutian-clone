@@ -16,15 +16,10 @@
     <div class="container">
       <div class="row">
         <div class="image-card">
-          <% (0..50).each do |image| %>
-
+          <% @jams.each  do |image| %>
             <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 indivudual-image pull-left">
-
-              <% img_url = "http://placehold.it/155x155" %>
-              <%= image_tag img_url %>
-
+              <%= cl_image_tag( image.photo, width: 155, height: 155, crop: :fill) %>
             </div>
-
           <% end %>
         </div>
       </div>

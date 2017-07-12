@@ -11,7 +11,15 @@ Jam.destroy_all
 
 
 puts 'Creating 5 fake users...'
-
+img_url = Array.new(20)
+number = 0
+img_url = ['http://res.cloudinary.com/dcgz3oher/image/upload/v1499874871/Raspberry1_yqleyb.jpg',
+'http://res.cloudinary.com/dcgz3oher/image/upload/v1499797676/f526daea2967001a4a97b3b48a13d6fb_vtpagi.jpg',
+'http://res.cloudinary.com/dcgz3oher/image/upload/v1499874867/Strawberry_Chocolate1_nlwusv.jpg',
+'http://res.cloudinary.com/dcgz3oher/image/upload/v1499802327/nbks73joxdas9koh8kyi.jpg',
+'http://res.cloudinary.com/dcgz3oher/image/upload/v1499792160/dog_glo0qw.png',
+'http://res.cloudinary.com/dcgz3oher/image/upload/v1499874867/Strawberry_Chocolate1_nlwusv.jpg'
+]
 5.times do
   user = User.create!(
     email: Faker::Internet.email,
@@ -22,8 +30,10 @@ puts 'Creating 5 fake users...'
       name: Faker::Food.ingredient,
       price: (5..100).to_a.sample,
       description: Faker::Food.spice,
-      user: user
-  )
+      user: user,
+      remote_photo_url: img_url[number]
+     )
+    number ++
     5.times do
       comments = Comment.create!(
         content: Faker::ChuckNorris.fact,
