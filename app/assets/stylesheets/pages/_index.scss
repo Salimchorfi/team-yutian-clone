@@ -1,1 +1,56 @@
 @import "home";
+
+.index-description {
+  width: 60%;
+  font-family: helvetica;
+  font-size: 14px;
+  padding: 10px 7.5vw;
+}
+
+.image-card {
+  padding: 10px 6.5vw;
+}
+
+#index-title {
+  position: absolute;
+  left: 7.5vw;
+  top: 10px;
+}
+
+#index-map-title {
+  position: absolute;
+  right: 7.5vw;
+  top: 10px;
+  color: black;
+}
+
+.index-title {
+  position: relative;
+  padding: 0px 7.5vw;
+  font-family: helvetica;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+// #index-title {
+//   font-family: helvetica;
+//   font-size: 16px;
+//   font-weight: bold;
+// }
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.index-image {
+  .container {
+    width: 100%;
+  }
+}
+
+.indivudual-image {
+  margin-bottom: 15px;
+  padding: 0.5vw 1.2vw;
+}
+
