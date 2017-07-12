@@ -37,3 +37,7 @@ function buttonUp(){
     $('.searchbox-icon').css('display','block');
   }
 }
+
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').focus()
+})
