@@ -4,8 +4,7 @@ class JamsController < ApplicationController
 
 
   def index
-    @jams = Jam.where.not(latitude: nil, longitude: nil)
-
+    @jams = Jam.all
     @hash = Gmaps4rails.build_markers(@jams) do |jam, marker|
       marker.lat jam.latitude
       marker.lng jam.longitude

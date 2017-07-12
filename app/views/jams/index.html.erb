@@ -18,9 +18,9 @@
         <div class="image-card">
 
           <% @jams.each  do |image| %>
-               <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 indivudual-image" id="image-div-sizing">
-              <%= cl_image_tag( image.photo, width: 155, height: 155, crop: :fill) %>
-
+               <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 " id="image-div-sizing">
+              <%= cl_image_tag( image.photo, width: 155, height: 155, crop: :scale) %>
+              </div>
           <% end %>
 
             <div class="row">
