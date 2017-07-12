@@ -2,65 +2,33 @@
 <%= render 'layouts/navbar' %>
 
 <div class="index-container">
-  <span>Hello, and welcome to our community. We are here to satisfy your every jam related need. We also sell guns. Please, make yourself at home.</span>
-
-  <h1>
-    <span>Explore jams</span>
-  </h1>
+  <div class="index-description">
+    <span>Hello, and welcome to our community. We are here to satisfy your every jam related need. We also sell guns. Please, make yourself at home.</span>
+  </div>
+  <div class="index-title">
+    <span id="index-title">Explore jams</span>
+    <a href="#" id="map-btn">
+      <span id="index-map-title">Map</span>
+    </a>
+  </div>
 
   <div class="index-image">
-    <ul>
-      <li>
-        <a href="">
-          <%# @images.each do |image| %>
-            <%# image
-        </a>
-      </li>
-    </ul>
-  </div>
-</div>
+    <div class="container">
+      <div class="row">
+        <div class="image-card">
+          <% (0..50).each do |image| %>
 
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 indivudual-image pull-left">
 
+              <% img_url = "http://placehold.it/155x155" %>
+              <%= image_tag img_url %>
 
+            </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class='text-left'>
-
-  <p>Hello, and welcome to our community. We are here to satisfy your every jam related need. We also sell guns. Please, make yourself at home.</p>
-</div>
-
-<h3><b>Explore Jams</b></h3>
-
-<input type="text" name="search" placeholder="Search..">
-
-
-<div class="text-center padded">
-  <%= link_to "Post a jam", new_jam_path, class: "btn btn-primary" %>
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12 col-md-6 col-sm-3 col-xs-1">
-      <% @jams.each do |j|%>
-        <%= render "jam", jam: j %>
-      <% end %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
