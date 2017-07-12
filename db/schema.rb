@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20170712160924) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -34,9 +35,12 @@ ActiveRecord::Schema.define(version: 20170712160924) do
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+
+    t.string   "photo"
     t.float    "latitude"
     t.float    "longitude"
     t.string   "address"
+
     t.index ["user_id"], name: "index_jams_on_user_id", using: :btree
   end
 
