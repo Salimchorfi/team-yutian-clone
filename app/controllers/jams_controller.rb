@@ -48,7 +48,7 @@ class JamsController < ApplicationController
   private
 
     def jam_params
-      params.require(:jam).permit(:name, :photo, :photo_cache)
+      params.require(:jam).permit(:category, :photo, :photo_cache, :description, :price, :address, :ingredient)
     end
 
     def set_jam
