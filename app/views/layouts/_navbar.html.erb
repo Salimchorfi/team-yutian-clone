@@ -10,9 +10,9 @@
 
 
       <div class="nav-options">
-        <a href="#"><span><%= link_to t(".top_call_to_action", default: "Search") %></span></a>
-        <a href="#"><span><%= link_to t(".top_call_to_action", default: "Profile") %></span></a>
-        <a href="#"><span>Create</span></a>
+        <a ><span><%= link_to t(".top_call_to_action", default: "Search") %></span></a>
+        <a ><span><%= link_to t(".top_call_to_action", default: "Profile") %></span></a>
+        <a ><span>Create</span></a>
         <a ><span><%= link_to('Logout', destroy_user_session_path, method: :delete) %></span></a>
       </div>
     </div>
@@ -25,11 +25,79 @@
           <input type="submit" class="searchbox-submit" value="GO">
           <span class="navbar-search searchbox-icon">GO</span>
       </form> -->
-      <a href="#"><span>Search</span></a>
-      <a href="#"><span><%= link_to('Login', new_user_session_path) %></span></a>
+      <a><span>Search</span></a>
+      <a data-toggle="modal" data-target="#login"><span>Login</span></a>
+
+
     </div>
 
     <% end %>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="login" >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <%= image_tag "yujams_logo.png" %>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="modal-body">
+          <div class="form-inputs">
+            <%= f.input :email, required: false, autofocus: true %>
+            <%= f.input :password, required: false %>
+            <% if devise_mapping.rememberable? -%>
+              <%= f.check_box :remember_me, {:checked => "checked"} %>
+              <%= f.label :remember_me %>
+            <% end -%>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="form-actions">
+            <%= f.button :submit, "Log in" %>
+            <a href="#signup" data-toggle="modal" data-dismiss="modal"><%= f.button :submit, "Signup" %></a>
+          </div>
+        </div>
+      <% end %>
+
+      </div>
+      </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal fade" id="signup" >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <%= image_tag "yujams_logo.png" %>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <div class="modal-body">
+          <p><%= f.error_notification %></p>
+
+          <div class="form-inputs">
+            <%= f.input :email, required: true, autofocus: true %>
+            <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+            <%= f.input :password_confirmation, required: true %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <div class="form-actions">
+            <%= f.button :submit, "Sign up" %>
+          </div>
+        </div>
+      <% end %>
+
+      </div>
+      </div>
+    </div>
 
   </div>
 </div>
