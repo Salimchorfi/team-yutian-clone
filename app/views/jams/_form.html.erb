@@ -1,31 +1,27 @@
- <%= form_for @jam do |f| %>
+<!-- Navbar -->
+<%= simple_form_for(@jam) do |f| %>
 
-  <% if @jam.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@jam.errors.count, "error") %> prohibited
-        this jam from being saved:
-      </h2>
-      <ul>
-        <% @jam.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
+<div class="new-container">
+
+  <!-- Image upload -->
+  <div class="upload-image">
+    <div class="image-box">
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
     </div>
-  <% end %>
+  </div>
 
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
+  <!-- Information upload -->
+  <div class="input-information">
+    <%= f.input :description, placeholder: 'Describe your jam with relevent information', label: false, :input_html => { :class => 'sf-description' } %>
+    <%= f.input :category, placeholder: 'Category', label: false %>
+    <%= f.input :price, placeholder: 'Price in Champignon', label: false %>
+    <%= f.input :address, placeholder: 'Address', label: false %>
+    <%= f.input :ingredient, placeholder: 'Ingredients', label: false %>
+    <%= f.submit 'Submit', :class => 'btn btn-danger' %>
+  </div>
 
-  <p>
-    <%= f.file_field :photo %>
-    <%= f.hidden_field :photo_cache %>
-  </p>
 
+</div>
 
-  <p>
-    <%= f.submit %>
-  </p>
 <% end %>
