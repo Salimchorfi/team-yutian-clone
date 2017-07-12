@@ -6,7 +6,6 @@ class Jam < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_one :trade
 
-  validates :name, presence: true, uniqueness: true
 
   mount_uploader :photo, PhotoUploader
 end
