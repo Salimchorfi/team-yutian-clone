@@ -1,0 +1,35 @@
+.new-container {
+  display: flex;
+  padding: 10px 7.5vw;
+}
+
+.image-box {
+  border:1px solid rgba(0,0,0,0.4);
+  width: 200px;
+  height: 200px;
+  margin-right: 120px;
+}
+
+.input-information {
+  width: 65vh;
+}
+
+.sf-description {
+  color: red;
+}
+
+.fileinput-button {
+  position: relative;
+  overflow: hidden;
+  float: left;
+  margin-right: 4px;
+  width: 110px;
+  height: 32px;
+  input{
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transform: translate(-300px, 0) scale(4);
+    direction: ltr;
+    cursor: pointer;
+  }
+}
