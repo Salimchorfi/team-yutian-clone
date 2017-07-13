@@ -59,11 +59,17 @@
     $(document).ready(function() {
       $('#map-btn').on("click", function(event) {
         if ($('#map').is(":visible")) {
+
           $('#map').hide();
           $(".product-display").removeClass("product-display-50");
+          $('#map-container').hide();
+
         } else {
+
           $('#map').show();
+          $('#map-container').show();
           $(".product-display").addClass("product-display-50");
+
         }
 
       });
