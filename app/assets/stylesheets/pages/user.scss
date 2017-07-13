@@ -1,0 +1,54 @@
+h3 {
+  font-family: helvetica;
+  font-size: 16px;
+}
+
+.user-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 7.5vw;
+}
+
+.information {
+  width: 516px;
+  // padding: 10px 7.5vw
+}
+
+.user-info {
+  text-align: right;
+  display: flex;
+  align-items: center;
+  margin: 0px 0px 20px;
+}
+
+.user-form {
+  display: flex;
+}
+
+.user-footer {
+  margin-top: 35px;
+  font-size: 12px;
+}
+.avatar-name {
+  margin-left: 15px;
+  font-family: helvetica;
+  font-size: 16px;
+}
+
+.mata-info {
+  margin-top: 1em;
+  font-family: helvetica;
+  font-size: 14px;
+}
+
+.discription-info {
+  font-family: helvetica;
+  font-size: 14px;
+}
+
+
+
+
+
+
+
