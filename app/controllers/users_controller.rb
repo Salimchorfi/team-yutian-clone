@@ -4,12 +4,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(user_params[:id])
+    @user = User.find(params[:id])
+    # @user = current_user
   end
 
-  def edit
-    @user = User.find(user_params[:id])
-  end
+  # def edit
+  #   @user = User.find(user_params[:id])
+  #   authorize current_user
+  # end
 
   def destroy
     @user = User.find(user_params[:id])
@@ -17,9 +19,10 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(user_params[:id])
-    @user.update(user_params)
-    redirect_to users_path
+    @user = User.find(params[:id])
+
+    @user.update_attributes(user_params)
+    redirect_to user_show_path(current_user.id)  # users_path
   end
 
 
@@ -32,10 +35,21 @@ class UsersController < ApplicationController
     end
   end
 
+  def profile
+
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:name, :encrypted_password, :location, :email, :photo, :photo_cache)
+    params.require(:user).permit(
+      :encrypted_password,
+      :location, :email,
+      :photo,
+      :photo_cache,
+      :first_name,
+      :last_name
+      )
   end
 
 end
