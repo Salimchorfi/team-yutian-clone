@@ -1,0 +1,24 @@
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+
+    $(document).ready(function() {
+      $(document).on("click", function(event) {
+        if ($('#google-map').is(":visible")) {
+
+          $('#google-map').hide();
+          $("#image-div-sizing").removeClass();
+          $("#image-div-sizing").addClass("col-xs-6 col-sm-4 col-md-3 col-lg-2 indivudual-image");
+
+        } else {
+
+          $('#google-map').show();
+          $("#image-div-sizing").removeClass();
+          $("#image-div-sizing").addClass("col-lg-6 indivudual-image");
+
+        }
+
+      });
+    });
+
+  <% end %>
+<% end %>
