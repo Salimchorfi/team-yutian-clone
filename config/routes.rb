@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   end
 
   resources :comments, only: [:destroy]
-  resources :users, only: [:show]
+  # resources :users, only: [:show]
+  # get 'users/:id' => 'users#show'
 
   root to: 'jams#index'
   # devise_for :users,
