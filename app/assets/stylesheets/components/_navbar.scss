@@ -10,13 +10,18 @@
   box-shadow: none;
 }
 
+.navbar-wagon a{
+  font-size:17px;
+}
+
 .navbar-search{
   position:absolute;
 }
 .navbar-search a{
-  font-size:20px;
-  left:100px;
+  right: 61px;
+  font-size:17px;
   position: relative;
+  color: black;
 
 }
 .nav-options {
@@ -36,39 +41,7 @@
   position: relative;
 }
 
-/* Optional class to fix the navbar on top */
-.navbar-wagon-fixed {
-  position: fixed;
-  left: 0px;
-  top: 0px;
-  z-index: 1;
-  width: 100%;
-}
 
-/* Navbar logo */
-.navbar-wagon-brand img {
-  width: 80px;
-}
-
-/* Navbar right section (with form, links, button) */
-.navbar-wagon-right {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* Navbar item */
-.navbar-wagon-item {
-  flex: 0 1 auto;
-  cursor: pointer;
-  padding: 0 20px;
-}
-
-/* Navbar standard link */
-.navbar-wagon-link {
-  color: #616668;
-  font-size: 14px;
-}
 .navbar-wagon-link:hover {
   color: #da552f;
   text-decoration: none;
@@ -119,10 +92,11 @@
 
 .searchbox-input{
     top:0;
-    right:0;
+    right:100px;
     border:0;
     outline:0;
     height:50px;
+    width: 900px;
     margin:0;
     padding:0px 55px 0px 20px;
     font-size:20px;
