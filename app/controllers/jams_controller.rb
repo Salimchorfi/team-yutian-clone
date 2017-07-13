@@ -26,8 +26,10 @@ class JamsController < ApplicationController
 
   def create
     @jam = Jam.new(jam_params)
+
     @jam.user = current_user
     if @jam.save!
+
       redirect_to jam_path(@jam)
     else
       render :new
