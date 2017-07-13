@@ -2,17 +2,24 @@ $(document).ready(function(){
   var submitIcon = $('.navbar-search');
   var inputBox = $('.searchbox-input');
   var searchBox = $('.searchbox');
+  searchBox.hide();
   var isOpen = false;
-  submitIcon.click(function(){
+  submitIcon.on('click',function(){
     if(isOpen == false){
+      searchBox.show();
       searchBox.addClass('searchbox-open');
+      submitIcon.empty();
       inputBox.focus();
       isOpen = true;
-    } else {
+    } else  {
+      $(".navbar-wagon").on("click" , function(event){
+      searchBox.hide();
       searchBox.removeClass('searchbox-open');
+      submitIcon.html('<a><span>Search</span></a>');
       inputBox.focusout();
       isOpen = false;
-    }
+    });
+    };
   });
   submitIcon.mouseup(function(){
     return false;
@@ -22,7 +29,7 @@ $(document).ready(function(){
   });
   $(document).mouseup(function(){
     if(isOpen == true){
-      $('.searchbox-icon').css('display','block');
+      $('.navbar-search').css('display','block');
       submitIcon.click();
     }
   });

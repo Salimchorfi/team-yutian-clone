@@ -10,9 +10,17 @@
   box-shadow: none;
 }
 
-.nav-options {
-  display: flex;
+.navbar-search{
+  position:absolute;
+}
+.navbar-search a{
+  font-size:20px;
+  left:100px;
+  position: relative;
 
+}
+.nav-options {
+  position:relative;
   font-family: helvetica;
   font-weight: bold;
   font-size: 16px;
@@ -25,6 +33,7 @@
 
 .nav-options a {
   color: black;
+  position: relative;
 }
 
 /* Optional class to fix the navbar on top */
@@ -94,11 +103,12 @@
 
 .searchbox{
     position:relative;
-    min-width:50px;
+    min-width:10px;
     width:0%;
     height:50px;
     float:right;
     overflow:hidden;
+     text-decoration: underline;
 
     -webkit-transition: width 0.3s;
     -moz-transition: width 0.3s;
@@ -112,33 +122,31 @@
     right:0;
     border:0;
     outline:0;
-    background:#dcddd8;
-    width:100%;
     height:50px;
     margin:0;
     padding:0px 55px 0px 20px;
     font-size:20px;
-    color:red;
+    border-bottom: solid red;
 }
 .searchbox-input::-webkit-input-placeholder {
-    color: #d74b4b;
+    color: #CDCDCD;
 }
 .searchbox-input:-moz-placeholder {
-    color: #d74b4b;
+    color: #CDCDCD;
 }
 .searchbox-input::-moz-placeholder {
-    color: #d74b4b;
+    color: #CDCDCD;
 }
 .searchbox-input:-ms-input-placeholder {
-    color: #d74b4b;
+    color: #CDCDCD;
 }
 
-.searchbox-icon,
+
 .searchbox-submit{
     width:50px;
     height:50px;
     display:block;
-    position:absolute;
+    position:relative;
     top:0;
     font-family:verdana;
     font-size:22px;
