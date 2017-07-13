@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<%= simple_form_for(@jam) do |f| %>
+<%= simple_form_for @jam do |f| %>
 
 <div class="new-container">
 
@@ -19,6 +19,7 @@
     <%= f.input :address, placeholder: 'Address', label: false %>
     <%= f.input :ingredient, placeholder: 'Ingredients', label: false %>
     <%= f.submit 'Submit', :class => 'btn btn-danger' %>
+
   </div>
 
 
