@@ -4,7 +4,9 @@ $(document).ready(function(){
   var searchBox = $('.searchbox');
   searchBox.hide();
   var isOpen = false;
-  submitIcon.on('click',function(){
+
+  $(document).on('click', function() {
+   submitIcon.on('click',function(){
     if(isOpen == false){
       searchBox.show();
       searchBox.addClass('searchbox-open');
@@ -12,15 +14,17 @@ $(document).ready(function(){
       inputBox.focus();
       isOpen = true;
     } else  {
-      $(".navbar-wagon").on("click" , function(event){
       searchBox.hide();
       searchBox.removeClass('searchbox-open');
       submitIcon.html('<a><span>Search</span></a>');
       inputBox.focusout();
       isOpen = false;
-    });
     };
   });
+ });
+
+
+
   submitIcon.mouseup(function(){
     return false;
   });
