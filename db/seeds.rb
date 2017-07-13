@@ -50,7 +50,8 @@ img_url = ['http://res.cloudinary.com/dcgz3oher/image/upload/v1499874871/Raspber
       price: (5..100).to_a.sample,
       description: Faker::Food.spice,
       user: user,
-      remote_photo_url: img_url[number]
+      remote_photo_url: img_url[number],
+      address: Faker::Address.street_address
      )
     number = number + 1
     5.times do
