@@ -4,7 +4,6 @@ class JamsController < ApplicationController
 
 
   def index
-    #@jams = Jam.all
     @jams = Jam.where.not(latitude: nil, longitude: nil)
     @hash = Gmaps4rails.build_markers(@jams) do |jam, marker|
       marker.lat jam.latitude
@@ -27,18 +26,12 @@ class JamsController < ApplicationController
 
   def create
     @jam = Jam.new(jam_params)
-
     @jam.user = current_user
-    if @jam.save
-      respond_to do |format|
-        format.html { redirect_to jam_path(@jam) }
-        format.js
-      end
+    #raise
+    if @jam.save!
+      redirect_to jam_path(@jam)
     else
-      respond_to do |format|
-        format.html { render 'jams/show' }
-        format.js
-      end
+      render :new
     end
   end
 
