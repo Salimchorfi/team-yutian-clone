@@ -71,8 +71,11 @@
   </div>
 </div>
 <p>  <%= @trade.user.first_name %>   </p>
-<p>  <%= @trade.jam.name %>   </p>
-<p>  <%= @trade.jam.price %>   </p>
+<% @users_orders.each do |order| %>
+  <div>
+    <%= link_to order.jam.name, jam_path(order.jam) %>
+  </div>
+<% end %>
 
 
 
