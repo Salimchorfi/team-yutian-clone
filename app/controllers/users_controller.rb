@@ -5,6 +5,8 @@
 
   def show
     @user = User.find(params[:id])
+    @jams = Jam.where(user_id: @user.id)
+    @trade = Trade.new(user: @user, jam: @jam)
     # @user = current_user
   end
 

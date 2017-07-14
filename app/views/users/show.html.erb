@@ -67,17 +67,6 @@
   </div>
 </div>
 
-<div calss="user-trades-container">
-
-        <% @id = current_user.id %>
-        <% @tr = Trade.where(user_id: @id) %>
-        <% @tr.each do |trade|%>
-        <%= reservation.jam.name %>
-        <% end %>
-
-
-</div>
-
 
 
 
