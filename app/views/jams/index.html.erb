@@ -50,7 +50,8 @@
         // [ ... ]
         markers = handler.addMarkers(<%= raw @hash.to_json %>);
         handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
+        handler.map.centerOn(markers[0]);
+
         if (markers.length == 0) {
           handler.getMap().setZoom(2);
         } else if (markers.length == 1) {
