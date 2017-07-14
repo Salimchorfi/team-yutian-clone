@@ -32,7 +32,7 @@
       <span><%= @jam.description %></span>
     </div>
     <div class="mata-info">
-      <p><%# @user.location %>
+      <p>
       <br>
       <%= time_ago_in_words(@jam.created_at) %> ago
       </p>
@@ -110,7 +110,8 @@
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger">Send offer</button>
+        <!-- <button type="button" class="btn btn-danger">Send offer</button> -->
+        <%= link_to "Send Offer", new_trade_path(@jam), method: :post %>
         <div class="currency-accepted">
           <span>The only currency accepeted is the Champignon</span>
         </div>

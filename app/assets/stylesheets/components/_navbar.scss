@@ -10,6 +10,11 @@
   box-shadow: none;
 }
 
+
+.navbar-wagon-brand img {
+  width: 70px;
+}
+
 .navbar-wagon a{
   font-size:17px;
 }
@@ -22,8 +27,8 @@
   font-size:17px;
   position: relative;
   color: black;
-
 }
+
 .nav-options {
   position:relative;
   font-family: helvetica;
@@ -115,7 +120,6 @@
     color: #CDCDCD;
 }
 
-
 .searchbox-submit{
     width:50px;
     height:50px;
@@ -136,8 +140,6 @@
     background:#172b3c;
 }
 
-
-
 .searchbox-open{
     width:100%;
 }
@@ -149,6 +151,7 @@
   text-align:center;
   font-size:18px;
 }
+
 .byline a{
   text-decoration:none;
   color: #d74b4b;
