@@ -31,7 +31,11 @@
           <div class="form-actions">
 
             <a><%= f.button :submit, "Log in" %></a>
-            <a href="#signup" data-toggle="modal" data-dismiss="modal" class="pull-left"><%= f.button :submit, "Signup" %></a>
+            <%- if current_page?('users/sign_in') %>
+              <p>You are on the sign in page</p>
+            <%- else %>
+              <a href="#signup" data-toggle="modal" data-dismiss="modal" class="pull-left"><%= f.button :submit, "Signup" %></a>
+            <%- end %>
 
           </div>
         </div>

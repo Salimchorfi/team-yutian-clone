@@ -9,6 +9,18 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.jam = Jam.find(params[:Jam_id])
     @comment.save
+
+    if @review.save
+      respond_to do |format|
+        format.html { redirect_to jam_path(@jam) }
+        format.js
+      end
+    else
+      respond_to do |format|
+        format.html { render 'jams/show' }
+        format.js
+      end
+    end
   end
 
   private
