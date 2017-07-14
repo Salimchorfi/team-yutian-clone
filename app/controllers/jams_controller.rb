@@ -29,11 +29,16 @@ class JamsController < ApplicationController
     @jam = Jam.new(jam_params)
 
     @jam.user = current_user
-    if @jam.save!
-
-      redirect_to jam_path(@jam)
+    if @jam.save
+      respond_to do |format|
+        format.html { redirect_to jam_path(@jam) }
+        format.js
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render 'jams/show' }
+        format.js
+      end
     end
   end
 

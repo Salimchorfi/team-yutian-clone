@@ -38,9 +38,8 @@
     end
   end
 
-  def profile
-
-  end
+  # def profile
+  # end
 
   private
 

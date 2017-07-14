@@ -35,12 +35,13 @@
 .product-row {
   display: flex;
   justify-content: space-between;
-  margin: 3em 4vw;
+  margin: 3em 7vw;
+  margin-left: 50px;
 }
 
 .index-image {
   .container {
-    width: 100%;
+    width: 88%;
   }
 }
 
@@ -75,7 +76,7 @@
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
-  width: 100%;
+  width: 88%;
   &.product-display-50 {
     width: 55%;
   }
