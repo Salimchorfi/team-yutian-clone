@@ -31,11 +31,12 @@
           <div class="form-actions">
 
             <a><%= f.button :submit, "Log in" %></a>
-            <%- if current_page?('users/sign_in') %>
-              <p>You are on the sign in page</p>
-            <%- else %>
+            <% unless current_page?(root_path) %> <!-- ENV['MY_URL'] -->
+            <button class="pull-left basic-button"><%= link_to('Singup', new_user_registration_path) %></button>
+            <% else %>
               <a href="#signup" data-toggle="modal" data-dismiss="modal" class="pull-left"><%= f.button :submit, "Signup" %></a>
-            <%- end %>
+
+            <% end %>
 
           </div>
         </div>
