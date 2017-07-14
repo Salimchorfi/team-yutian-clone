@@ -3,9 +3,9 @@ $(document).ready(function(){
   var inputBox = $('.searchbox-input');
   var searchBox = $('.searchbox');
   searchBox.hide();
-  var isOpen = false;
 
   $(document).on('click', function() {
+  var isOpen = false;
    submitIcon.on('click',function(){
     if(isOpen == false){
       searchBox.show();
