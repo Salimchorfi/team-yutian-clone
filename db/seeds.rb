@@ -13,31 +13,23 @@ Jam.destroy_all
 puts 'Creating 5 fake users...'
 img_url = Array.new(20)
 number = 0
-img_url = ['http://res.cloudinary.com/dcgz3oher/image/upload/v1499874871/Raspberry1_yqleyb.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1499797676/f526daea2967001a4a97b3b48a13d6fb_vtpagi.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1499889897/Blueberry1_lzazjc.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1499874867/Strawberry_Chocolate1_nlwusv.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1499802327/nbks73joxdas9koh8kyi.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1499792160/dog_glo0qw.png',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1499889908/Zippy_Jalapeno1_dulbuj.jpg',
+img_url = [
+'https://s-media-cache-ak0.pinimg.com/564x/2a/88/66/2a886680b5cb2247159bb72c3582a47f.jpg',
+'https://s-media-cache-ak0.pinimg.com/564x/1a/aa/b5/1aaab5378aacc268545064a519e8705a.jpg',
+'https://s-media-cache-ak0.pinimg.com/564x/99/82/56/9982569baef207fca7bdde2b4c21e9d4.jpg',
+'https://s-media-cache-ak0.pinimg.com/564x/30/f6/62/30f662413ee93b06e3340a489f7e7110.jpg',
+'https://s-media-cache-ak0.pinimg.com/564x/f2/20/cb/f220cb69ba63a0a877636e7a7a9d8206.jpg',
+'https://s-media-cache-ak0.pinimg.com/564x/41/0f/2a/410f2a262daaca0ef4c5218baf761122.jpg',
+'https://s-media-cache-ak0.pinimg.com/564x/e2/ab/3c/e2ab3c668618a8d5f6f899a3190bb1e8.jpg',
+'https://s-media-cache-ak0.pinimg.com/564x/99/a7/06/99a706bd02a0cf0e7d6e2d970e9f5d22.jpg',
+'https://s-media-cache-ak0.pinimg.com/564x/07/20/57/072057ac032b58f9faf656e4a2198818.jpg',
 
-
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1499889014/images_pp9tfz.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1499889012/images_1_kzu8cn.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1499889892/Pinneapple_Strawberry1_izkhup.jpg',
-
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1499889904/Triple_Citrus1_llbzxu.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1499802327/nbks73joxdas9koh8kyi.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1499889304/123170-004-E7FBD22B_s57htj.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1499888671/maxresdefault_toea7p.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1499889895/cherry1_wirjca.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1499888674/ead3d7919b2dd76126f9c45486693c89_hcgzpg.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1499889899/Mango_Raspberry1_1_ytzcmx.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1499888676/Grenade_IMG_3098_pcwzpi.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1499802327/nbks73joxdas9koh8kyi.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1499874873/Mango_Raspberry1_zaughn.jpg'
-
-
+'https://images.pexels.com/photos/162686/plums-fruit-jam-violet-162686.jpeg?w=940&h=650&auto=compress&cs=tinysrgb',
+'https://images.pexels.com/photos/161508/jam-berry-fruit-happen-161508.jpeg?w=940&h=650&auto=compress&cs=tinysrgb',
+'https://images.pexels.com/photos/162900/cherries-fruits-sweet-cherry-cherry-jam-162900.jpeg?w=940&h=650&auto=compress&cs=tinysrgb',
+'https://images.pexels.com/photos/119571/pexels-photo-119571.jpeg?w=940&h=650&auto=compress&cs=tinysrgb',
+'https://images.pexels.com/photos/295012/pexels-photo-295012.jpeg?w=940&h=650&auto=compress&cs=tinysrgb',
+'https://images.pexels.com/photos/162704/blueberries-cream-dessert-breakfast-162704.jpeg?w=940&h=650&auto=compress&cs=tinysrgb'
 ]
 5.times do
   user = User.create!(
