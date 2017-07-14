@@ -18,7 +18,6 @@
     <% if user_signed_in? %>
       <div class="nav-options">
 
-        <a><span><%= link_to t(".top_call_to_action", default: "Search") %></span></a>
         <a ><span><%= link_to "Profile", user_show_path(current_user.id) %></span></a>
         <a ><span><%= link_to("Create", new_jam_path) %></span></a>
         <a ><span><%= link_to('Logout', destroy_user_session_path, method: :delete) %></span></a>
