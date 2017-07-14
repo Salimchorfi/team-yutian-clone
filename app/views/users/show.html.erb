@@ -26,7 +26,7 @@
       </div>
 
     </div>
-    <div class="mata-info">
+    <div class="meta-info">
       <p>
       <br>
       <strong>Member since: </strong>
@@ -35,8 +35,9 @@
       <strong>Last signed in: </strong>
         <%= time_ago_in_words(@user.last_sign_in_at)%> ago
 
-
-          <h3><b>Update profile</b></h3>
+      </p>
+    </div>
+    <h3><b>Update profile</b></h3>
     <div class="user-form">
     <%= simple_form_for :user, url: user_update_path(current_user.id), action: :update, method: :post do |f| %>
         <%= f.error_notification %>
@@ -57,7 +58,6 @@
 
 
 
-    </div>
 
 
   </div>
