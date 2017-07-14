@@ -1,16 +1,16 @@
 class CommentsController < ApplicationController
 
-  def new()
+  def new
     @jam = Jam.find(params[:jam_id])
     @comment = Comment.new
   end
 
-  def create()
+  def create
     @comment = Comment.new(comment_params)
-    @comment.jam = Jam.find(params[:Jam_id])
-    @comment.save
+    @jam = Jam.find(params[:jam_id])
+    @comment.jam = @jam
 
-    if @review.save
+    if @comment.save
       respond_to do |format|
         format.html { redirect_to jam_path(@jam) }
         format.js

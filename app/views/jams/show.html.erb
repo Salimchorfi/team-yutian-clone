@@ -49,20 +49,19 @@
 
   <!--   Comments section -->
     <div class="comment-info">
-      <ul>
+      <ul id='comments'>
         <% @comments.each do |comment| %>
-          <li><strong><%= "#{@user.email.split("@")[0]}: " %></strong> <%="#{comment.content}" %></li>
+          <%= render 'comments/show', comment: comment %>
         <% end %>
       </ul>
 
       <!--   Input Box -->
       <div class="row">
-        <div class="comment-input-container">
-          <div class="col-3">
-              <input class="effect-1 submit_on_enter" type="text" placeholder="Add a comment...">
-                <span class="focus-border"></span>
-            </div>
+              <div class="comment-input-container">
+          <div class="col-3" id='comment_box'>
+                    <%= render 'comments/form', jam: @jam, comment: Comment.new %>
           </div>
+        </div>
       </div>
     </div>
 
@@ -108,24 +107,6 @@
 
 
 
-<% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-
-    $(document).ready(function() {
-
-      $('.submit_on_enter').keydown(function(event) {
-
-        if (event.keyCode == 13) {
-          $('.submit_on_enter').submit();
-          $('.submit_on_enter').val('');
-          return false;
-        }
-      });
-
-    });
-
-  <% end %>
-<% end %>
 
 
 
