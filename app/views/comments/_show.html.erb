@@ -1,0 +1,4 @@
+<% @user = User.find(comment.user_id) if !comment.user_id.nil? %>
+<% @user = current_user %>
+
+<li><strong><%= "#{@user.email.split("@")[0]}: " %></strong> <%="#{comment.content}" %></li>

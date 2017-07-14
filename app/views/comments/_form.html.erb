@@ -1,0 +1,29 @@
+            <%= simple_form_for([jam, comment], remote: true) do |f| %>
+            <div class="col-3 input-effect dynamic-form">
+              <%= f.input :content, input_html: {class: 'effect-16 submit_on_enter'} %>
+              <span class="focus-border"></span>
+            </div>
+            <div class="button-div">
+              <%= f.button :submit, input_html: {class: 'effect-1 submit_on_enter'} %>
+            </div>
+            <% end %>
+
+
+  <% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+
+    $(document).ready(function() {
+
+      $(document).keydown(function(event) {
+        if (event.keyCode == 13) {
+          var submit_on_enter = $('.submit_on_enter');
+          if(submit_on_enter.val() != '') {
+            $('#new_comment').submit();
+          }
+        }
+      });
+
+    });
+
+  <% end %>
+<% end %>
