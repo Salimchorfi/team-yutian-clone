@@ -33,33 +33,33 @@
     </div>
     <div class="mata-info">
       <p>
-      <br>
-      <%= time_ago_in_words(@jam.created_at) %> ago
+        <br>
+        <%= time_ago_in_words(@jam.created_at) %> ago
       </p>
     </div>
 
-  <!--   information about the price of the product -->
+    <!--   information about the price of the product -->
     <div class="buying-info">
 
-      <a type="button" data-toggle="modal" data-target="#exampleModal" data-whatever=<% "#{@user.email}" %>>Buy</a>
+      <a type="button" data-toggle="modal" data-target="#buyModal" data-whatever=<% "#{@user.email}" %>>Buy</a>
 
       <span id="price"><%= "#{@jam.price} champignons" %></span>
 
     </div>
 
-  <!--   Comments section -->
+    <!--   Comments section -->
     <div class="comment-info">
       <ul id='comments'>
         <% @comments.each do |comment| %>
-          <%= render 'comments/show', comment: comment %>
+        <%= render 'comments/show', comment: comment %>
         <% end %>
       </ul>
 
       <!--   Input Box -->
       <div class="row">
-              <div class="comment-input-container">
+        <div class="comment-input-container">
           <div class="col-3" id='comment_box'>
-                    <%= render 'comments/form', jam: @jam, comment: Comment.new %>
+            <%= render 'comments/form', jam: @jam, comment: Comment.new %>
           </div>
         </div>
       </div>
@@ -68,11 +68,11 @@
   </div>
 </div>
 
-<div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal" id="buyModal">
+  <div class="modal-dialog modal-sm" role="document">
+
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"></h5>
         <%= image_tag "yujams_logo.png" %>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -80,46 +80,32 @@
       </div>
       <div class="modal-body">
 
-        <div class="user-form">
 
-          <div class="form-inputs">
+        <div class="form-inputs">
 
-        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
+        <div class="buy-form">
+            <%= simple_form_for :trade, url: new_trade_path(@jam), action: :create, method: :post do |f| %>
             <%= f.error_notification %>
-
-            <%= f.input :email, required: true, autofocus: true %>
-            <%= f.input :password, required: true %>
-            <% if devise_mapping.rememberable? -%>
-              <%= f.check_box :remember_me, {:checked => "checked"} %>
-              <%= f.label :remember_me %>
-            <% end -%>
+            <div class="form-inputs">
+              <%= f.input :message, required: false, autofocus: true, autofocus: true %>
+            </div>
+            <div class="modal-footer">
+              <div class="form-actions">
+                <a><%= f.button :submit, "Apply" %></a>
+              </div>
+              <div class="currency-accepted">
+                <span>The only currency accepeted is the Champignon</span>
+              </div>
+            </div>
+            <% end %>
           </div>
 
 
-        <div class="form-actions">
-
-          <a><%= f.button :submit, "Apply" %></a>
-
         </div>
 
-
-      <% end %>
-
-    </div>
-      </div>
-
-      <div class="modal-footer">
-        <!-- <button type="button" class="btn btn-danger">Send offer</button> -->
-        <%= link_to "Send Offer", new_trade_path(@jam), method: :post %>
-        <div class="currency-accepted">
-          <span>The only currency accepeted is the Champignon</span>
-        </div>
       </div>
     </div>
   </div>
-</div>
-
 
 
 
