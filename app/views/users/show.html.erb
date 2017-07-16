@@ -10,7 +10,11 @@
     <div class="user-info">
 
       <div class="avatar-info">
-        <% avatar_url = "http://placehold.it/71x71" %>
+        <% if @user.facebook_picture_url.nil? %>
+         <% avatar_url = "http://placehold.it/71x71" %>
+        <% else %>
+          <% avatar_url = @user.facebook_picture_url %>
+        <% end %>
         <%= image_tag avatar_url, class: "avatar-custom" %>
       </div>
 
@@ -65,12 +69,21 @@
          <li><%= link_to order.jam.name, jam_path(order.jam) %> </li>
          <li><strong>Name: </strong><%= order.jam.name  %>  </li>
          <li><strong>Price: </strong><%= order.jam.price %>  </li>
-         <li><strong>Created at: </strong><%= order.jam.created_at.to_date.strftime('%a %d %b %Y')  %> </li>
+         <li><strong>Created at: </strong><%= order.jam.created_at.to_date.strftime('%a %d %b %Y')%> </li>
+         <% unless order.message.nil? %>
+          <li><strong>Message: </strong><%= order.message %></li>
+        <% end %>
        </ul>
 
       </div>
       <div class="card-item">
-        <i class="fa fa-check"></i>
+        <div title="Confirmation">
+          <% if order.confirmation %>
+            <i class="fa fa-check"></i>
+          <% else %>
+            <i class="fa fa-times"></i>
+          <% end %>
+        </div>
       </div>
     </div>
   <% end %>
