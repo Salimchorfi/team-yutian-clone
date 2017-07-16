@@ -3,11 +3,8 @@
 
 
 
+<div class="user-container">
 
-<div class="media">
-  <div class="media-body">
-    <div class="media-section">
-      <div class="user-container">
   <div class="information">
 
     <div class="user-info">
@@ -26,63 +23,58 @@
       </div>
 
     </div>
-    <div class="mata-info">
+    <div class="meta-info">
       <p>
-      <br>
-      <strong>Member since: </strong>
+        <br>
+        <strong>Member since: </strong>
         <%= (@user.created_at).to_date.strftime('%a %d %b %Y') %>
-      <br>
-      <strong>Last signed in: </strong>
+        <br>
+        <strong>Last signed in: </strong>
         <%= time_ago_in_words(@user.last_sign_in_at)%> ago
-
-
-          <h3><b>Update profile</b></h3>
+      </p>
+    </div>
+    <h3><strong>Update profile</strong></h3>
     <div class="user-form">
-    <%= simple_form_for :user, url: user_update_path(current_user.id), action: :update, method: :post do |f| %>
-        <%= f.error_notification %>
-        <div class="form-inputs">
-            <%= f.input :first_name, required: false, autofocus: true,placeholder: 'First name', label: false %>
-            <%= f.input :last_name, required: false, autofocus: true,placeholder: 'Last name', label: false %>
-        </div>
-        <div class="form-actions">
-          <a><%= f.button :submit, "Apply" %></a>
-        </div>
+      <%= simple_form_for :user, url: user_update_path(current_user.id), action: :update, method: :post do |f| %>
+      <%= f.error_notification %>
+      <div class="form-inputs">
+        <%= f.input :first_name, required: false, autofocus: true,placeholder: 'First name', label: false %>
+        <%= f.input :last_name, required: false, autofocus: true,placeholder: 'Last name', label: false %>
+      </div>
+      <div class="form-actions">
+        <a><%= f.button :submit, "Apply" %></a>
+      </div>
       <% end %>
     </div>
-    <div class="discription-info">
-    </div>
-    <div class="user-footer"
-      <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-    </div>
 
-
-
-    </div>
-
-
-  </div>
-</div>
+    <div class="user-footer">
+    <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
     </div>
   </div>
-  <div class="media-aside">
 
-    <div class="media-section">
-    <h4>My Trade History</h4>
-  <% @users_orders.each do |order| %>
-  <div>
-   <ul>
-     <li><%= link_to order.jam.name, jam_path(order.jam) %> </li>
-     <li>Name: <%= order.jam.name  %>  </li>
-     <li>Price: <%= order.jam.price %>  </li>
-     <li>Created at:<%= order.jam.created_at %> </li>
-     <li> <%= cl_image_tag( order.jam.photo, width: 155, height: 155, crop: :scale) %>  </li>
+  <div class="user-orders">
 
-   </ul>
+    <h3>My Trade History</h3>
+    <% @users_orders.each do |order| %>
+    <div class="card">
+      <div class="card-item">
+        <%= cl_image_tag( order.jam.photo, width: 155, height: 155, crop: :scale) %>
+      </div>
+      <div class="card-body">
+        <ul id="name-form">
+         <li><%= link_to order.jam.name, jam_path(order.jam) %> </li>
+         <li><strong>Name: </strong><%= order.jam.name  %>  </li>
+         <li><strong>Price: </strong><%= order.jam.price %>  </li>
+         <li><strong>Created at: </strong><%= order.jam.created_at.to_date.strftime('%a %d %b %Y')  %> </li>
+       </ul>
 
-
-  </div>
-<% end %>
+      </div>
+      <div class="card-item">
+        <i class="fa fa-check"></i>
+      </div>
     </div>
+  <% end %>
+
   </div>
 </div>
 
