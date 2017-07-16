@@ -1,28 +1,42 @@
 h3 {
-  font-family: helvetica;
   font-size: 16px;
+  font-weight: bold;
+  font-family: helvetica;
 }
 
 .user-container {
+  position: relative;
   display: flex;
-  justify-content: space-between;
   padding: 10px 7.5vw;
+  font-family: helvetica;
+  // background-color: gray;
+  // justify-content: space-between;
+  // width: 100%;
+  // height: auto;
 }
 
 .information {
-  width: 516px;
+  flex: 0 1 auto;
+  max-width: 270px;
+  // background-color: #F2F3F4;
   // padding: 10px 7.5vw
 }
 
 .user-info {
-  text-align: right;
-  display: flex;
-  align-items: center;
-  margin: 0px 0px 20px;
+  text-align: left;
+  // display: flex;
+  // align-items: left;
+  // margin: 0px 0px 20px;
 }
 
 .user-form {
-  display: flex;
+  // display: flex;
+  width: 200px;
+
+}
+
+#name-form {
+  list-style-type: none;
 }
 
 .user-footer {
@@ -30,22 +44,38 @@ h3 {
   font-size: 12px;
 }
 .avatar-name {
-  margin-left: 15px;
-  font-family: helvetica;
+  margin-left: 0px;
   font-size: 16px;
 }
 
 .meta-info {
-  margin-top: 1em;
-  font-family: helvetica;
+  // margin-top: 1em;
   font-size: 14px;
 }
 
-.discription-info {
-  font-family: helvetica;
-  font-size: 14px;
+
+.user-orders {
+  // background-color: #D3D3D3;
+  flex: 1 1 auto;
+  width: 500px;
+  margin-top: -12px;
 }
 
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.card-item{
+  // flex: 0 0 0;
+  left: 0;
+}
+.card-body {
+  // flex: 0 0 auto;
+
+}
 
 
 
