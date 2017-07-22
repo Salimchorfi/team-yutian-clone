@@ -50,7 +50,8 @@
     <!--   Comments section -->
     <div class="comment-info">
       <ul id='comments'>
-        <% @comments.each do |comment| %>
+        <% @comments = Comment.where(:jam_id => @jam.id) %>
+         <% @comments.each do |comment| %>
         <%= render 'comments/show', comment: comment %>
         <% end %>
       </ul>

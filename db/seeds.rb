@@ -14,22 +14,24 @@ puts 'Creating 5 fake users...'
 img_url = Array.new(20)
 number = 0
 img_url = [
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1500063506/j9hngelfcj7wrt8qdjud.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1500063505/bj8uymrxt5l2ipevlewr.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1500063504/uedpswoagiik9autg1oy.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1500063503/lapi0jtwt9bcvfaaafap.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1500063501/g0weqcibwkehr4e07muw.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1500063500/tsqlzqolobdwi7pcejly.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1500063498/evus5aorjexeffmygmvd.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1500063497/nchcvm1uoxvvrb1ortr4.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1500063496/nmx0mkxnyajioiwo0md5.jpg',
 
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1500063495/sq3qwbzolrsusbdfspyl.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1500063493/hzvjaqof8repjgpzblr3.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1500063491/qmqngn48yd7f0bdlhyii.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1500063493/hzvjaqof8repjgpzblr3.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1500063491/qmqngn48yd7f0bdlhyii.jpg',
-'http://res.cloudinary.com/dcgz3oher/image/upload/v1500063489/xlsbuliant1xen8juc3o.jpg'
+"http://res.cloudinary.com/dcgz3oher/image/upload/v1500063355/b9wfctnhxq1v9v79kyjt.jpg",
+"http://res.cloudinary.com/dcgz3oher/image/upload/v1500063355/b9wfctnhxq1v9v79kyjt.jpg",
+"http://res.cloudinary.com/dcgz3oher/image/upload/v1500063355/b9wfctnhxq1v9v79kyjt.jpg",
+"http://res.cloudinary.com/dcgz3oher/image/upload/v1500063355/b9wfctnhxq1v9v79kyjt.jpg",
+"http://res.cloudinary.com/dcgz3oher/image/upload/v1500063355/b9wfctnhxq1v9v79kyjt.jpg",
+"http://res.cloudinary.com/dcgz3oher/image/upload/v1500063355/b9wfctnhxq1v9v79kyjt.jpg",
+"http://res.cloudinary.com/dcgz3oher/image/upload/v1500063355/b9wfctnhxq1v9v79kyjt.jpg",
+"http://res.cloudinary.com/dcgz3oher/image/upload/v1500063355/b9wfctnhxq1v9v79kyjt.jpg",
+"http://res.cloudinary.com/dcgz3oher/image/upload/v1500063355/b9wfctnhxq1v9v79kyjt.jpg",
+"http://res.cloudinary.com/dcgz3oher/image/upload/v1500063355/b9wfctnhxq1v9v79kyjt.jpg",
+"http://res.cloudinary.com/dcgz3oher/image/upload/v1500063355/b9wfctnhxq1v9v79kyjt.jpg",
+"http://res.cloudinary.com/dcgz3oher/image/upload/v1500063355/b9wfctnhxq1v9v79kyjt.jpg",
+"http://res.cloudinary.com/dcgz3oher/image/upload/v1500063355/b9wfctnhxq1v9v79kyjt.jpg",
+"http://res.cloudinary.com/dcgz3oher/image/upload/v1500063355/b9wfctnhxq1v9v79kyjt.jpg",
+"http://res.cloudinary.com/dcgz3oher/image/upload/v1500063355/b9wfctnhxq1v9v79kyjt.jpg",
+"http://res.cloudinary.com/dcgz3oher/image/upload/v1500063355/b9wfctnhxq1v9v79kyjt.jpg",
+"http://res.cloudinary.com/dcgz3oher/image/upload/v1500063355/b9wfctnhxq1v9v79kyjt.jpg"
 ]
 5.times do
   user = User.create!(
@@ -55,6 +57,7 @@ img_url = [
     end
   end
 end
+
 
 # puts 'Creating 20 fake jams...'
 
