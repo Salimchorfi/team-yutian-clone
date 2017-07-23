@@ -11,19 +11,20 @@
         <span class="navbar-search searchbox-icon">GO</span>
       </form>
     </div>
-      <div class="navbar-search">
-        <a><strong>Search</strong></a>
-      </div>
+
 
     <% if user_signed_in? %>
       <div class="nav-options">
+
+        <a><strong>Search</strong></a>
         <a ><span><%= link_to "Profile", user_show_path(current_user.id) %></span></a>
         <a ><span><%= link_to("Create", new_jam_path) %></span></a>
         <a ><span><%= link_to('Logout', destroy_user_session_path, method: :delete) %></span></a>
-
-
       </div>
     <% else %>
+
+        <a><strong>Search</strong></a>
+
       <div class="nav-options">
         <a data-toggle="modal" data-target="#login"><span>Login</span></a>
       </div>
