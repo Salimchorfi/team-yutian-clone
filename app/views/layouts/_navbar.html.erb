@@ -2,7 +2,6 @@
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "yujams_logo.png", class: "navbar-icon" %>
   <% end %>
-
     <!-- Different navigation if login or not -->
     <div class="nav-options" >
       <form class="searchbox">
@@ -11,30 +10,26 @@
         <span class="navbar-search searchbox-icon">GO</span>
       </form>
     </div>
-      <div class="navbar-search">
-        <a><strong>Search</strong></a>
-      </div>
+
 
     <% if user_signed_in? %>
       <div class="nav-options">
+        <a><strong>Search</strong></a>
         <a ><span><%= link_to "Profile", user_show_path(current_user.id) %></span></a>
         <a ><span><%= link_to("Create", new_jam_path) %></span></a>
         <a ><span><%= link_to('Logout', destroy_user_session_path, method: :delete) %></span></a>
-
-
       </div>
     <% else %>
+
       <div class="nav-options">
+       <a><strong>Search</strong></a>
         <a data-toggle="modal" data-target="#login"><span>Login</span></a>
       </div>
-        <% end %>
-
-
+    <% end %>
     <!-- Login Modal -->
     <div class="modal" id="login" >
       <%= render "devise/shared/log" %>
     </div>
-
     <!-- Signup Modal -->
     <div class="modal" id="signup" >
       <%= render "devise/shared/reg" %>

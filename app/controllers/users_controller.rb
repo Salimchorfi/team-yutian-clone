@@ -38,8 +38,6 @@
     end
   end
 
-  # def profile
-  # end
 
   private
 
