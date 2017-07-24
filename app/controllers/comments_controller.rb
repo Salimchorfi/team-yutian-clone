@@ -1,15 +1,16 @@
 class CommentsController < ApplicationController
 
   def new
-    @jam = Jam.find(params[:jam_id])
     @comment = Comment.new
   end
 
   def create
+
     @comment = Comment.new(comment_params)
     @jam = Jam.find(params[:jam_id])
-    @comment.jam_id = @jam
-    @comment.user_id= @user.user_id
+    @comment.jam = @jam
+    @comment.user_id = current_user.id
+
 
     if @comment.save
       respond_to do |format|
