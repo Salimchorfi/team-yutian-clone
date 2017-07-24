@@ -3,65 +3,58 @@
 
 <div class="show-container">
   <!-- Pictures of the product -->
-  <div class="pictures">
-
-    <%= cl_image_tag( @jam.photo, width: 450, height: 450, crop: :scale) %>
+  <div class="pictures-container">
+    <%= cl_image_tag( @jam.photo, width: 500, height: 500, crop: :scale) %>
   </div>
 
   <!-- Information on the user -->
   <div class="information">
-
     <div class="user-info">
-
       <div class="avatar-info">
         <% avatar_url = "http://placehold.it/71x71" %>
         <%= image_tag avatar_url, class: "avatar-custom" %>
       </div>
-
       <div class="avatar-name">
         <p><strong><%= @user.email.split("@")[0] %></strong>
           <br>
           <strong><%= @jam.name %></strong>
         </p>
       </div>
-
     </div>
 
 
     <div class="discription-info">
-      <span><%= @jam.description %></span>
+      <span><strong>Description:</strong> <%= @jam.description %></span>
     </div>
     <div class="mata-info">
       <p>
         <br>
-        <%= time_ago_in_words(@jam.created_at) %> ago
+        Created <%= time_ago_in_words(@jam.created_at) %> ago
       </p>
     </div>
 
+
     <!--   information about the price of the product -->
     <div class="buying-info">
-
       <a type="button" data-toggle="modal" data-target="#buyModal" data-whatever=<% "#{@user.email}" %>>Buy</a>
-
       <span id="price"><%= "#{@jam.price} champignons" %></span>
-
     </div>
 
     <!--   Comments section -->
-    <div class="comment-info">
-      <ul id='comments'>
-        <% @comments.each do |comment| %>
-        <%= render 'comments/show', comment: comment %>
+    <div class="comment-info"  >
+    <div class="comment-box"  style="overflow-y:scroll;">
+      <ul>
+        <% @comments = Comment.where(:jam_id => @jam.id) %>
+         <% @comments.each do |comment| %>
+           <%= render 'comments/show', comment: comment%>
         <% end %>
       </ul>
-
+     </div>
       <!--   Input Box -->
-      <div class="row">
-        <div class="comment-input-container">
+      <div class="comment-container">
           <div class="col-3" id='comment_box'>
             <%= render 'comments/form', jam: @jam, comment: Comment.new %>
           </div>
-        </div>
       </div>
     </div>
 
@@ -99,14 +92,11 @@
             </div>
             <% end %>
           </div>
-
-
         </div>
-
       </div>
     </div>
   </div>
-
+</div>
 
 
 

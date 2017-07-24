@@ -9,17 +9,22 @@
   justify-content: space-between;
   box-shadow: none;
 }
+.navbar-icon{
+  width:120px;
+  height: 40px;
+}
 
 
 
 .navbar-search{
-  position:absolute;
+  position:relative;
 }
 .navbar-search a{
   right: 61px;
   font-size:16px;
   position: relative;
   color: black;
+  left:320px;
 
 }
 .nav-options {
@@ -94,7 +99,7 @@
     border:0;
     outline:0;
     height:50px;
-    width: 100px;
+    width: 800px;
     margin:0;
     padding:0px 55px 0px 20px;
     font-size:20px;
