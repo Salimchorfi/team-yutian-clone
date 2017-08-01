@@ -2,7 +2,8 @@
 class JamsController < ApplicationController
   before_action :set_jam, only: [:show, :edit, :update, :destroy]
 
-
+  include PgSearch
+  pg_search_scope :search_by_name, :against => :name
   def index
     @jams = Jam.where.not(latitude: nil, longitude: nil)
     @hash = Gmaps4rails.build_markers(@jams) do |jam, marker|
@@ -27,7 +28,6 @@ class JamsController < ApplicationController
   def create
     @jam = Jam.new(jam_params)
     @jam.user = current_user
-    #raise
     if @jam.save!
       redirect_to jam_path(@jam)
     else
@@ -42,7 +42,6 @@ class JamsController < ApplicationController
 
   def destroy
     @jam.destroy
-
     redirect_to jams_path
   end
 
