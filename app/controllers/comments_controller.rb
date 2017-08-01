@@ -18,6 +18,7 @@ class CommentsController < ApplicationController
         format.js
       end
     else
+      flash[:alert] = 'This city is currently not available.'
       respond_to do |format|
         format.html { render 'jams/show' }
         format.js

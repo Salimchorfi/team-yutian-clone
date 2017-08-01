@@ -15,13 +15,17 @@
     <% if user_signed_in? %>
       <div class="nav-options">
         <a><strong>Search</strong></a>
+
         <a ><span><%= link_to "Profile", user_show_path(current_user.id) %></span></a>
         <a ><span><%= link_to("Create", new_jam_path) %></span></a>
         <a ><span><%= link_to('Logout', destroy_user_session_path, method: :delete) %></span></a>
       </div>
-    <% else %>
 
+    <% else %>
       <div class="nav-options">
+        <%= form_tag(results_path, :method => :get, class: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search for previous entries..", class: "form-control" %>
+        <% end %>
        <a><strong>Search</strong></a>
         <a data-toggle="modal" data-target="#login"><span>Login</span></a>
       </div>

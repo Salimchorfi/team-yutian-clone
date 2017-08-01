@@ -8,4 +8,7 @@ class Jam < ApplicationRecord
 
 
   mount_uploader :photo, PhotoUploader
+
+  include PgSearch
+  pg_search_scope :search_by_name, against: [ :name ]
 end

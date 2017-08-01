@@ -1,0 +1,14 @@
+<% if @results.count == 0 %>
+  <h1> Sorry, we currently don't have the jam you want </h1>
+<% elsif @results.count == 1 %>
+  <h1> We found 1 jam for you! </h1>
+  <div class="search-jam-information">
+    <ul>
+      <li> <%= @results.name %></li>
+      <li> <%= @results.price %></li>
+      <li> <%= @results.description %></li>
+    </ul>
+  </div>
+<% else %>
+  <h1> We found <%= @results.count %> jams for you! </h1>
+<% end %>

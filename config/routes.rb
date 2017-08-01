@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   end
 
   resources :comments, only: [:destroy]
+  resources :results
 
   # get 'users/:id' => 'users#show'
   # match '/users/:id', :to => 'users#show', :as => :user
