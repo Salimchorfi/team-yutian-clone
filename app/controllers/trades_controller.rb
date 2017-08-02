@@ -16,4 +16,10 @@ class TradesController < ApplicationController
     end
   end
 
+  def destroy
+    @trade = Trade.find(params[:id])
+    @trade.destroy
+    redirect_to jams_path
+  end
+
 end
