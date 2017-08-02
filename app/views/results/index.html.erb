@@ -1,14 +1,16 @@
-<% if @results.count == 0 %>
-  <h1> Sorry, we currently don't have the jam you want </h1>
-<% elsif @results.count == 1 %>
-  <h1> We found 1 jam for you! </h1>
-  <div class="search-jam-information">
-    <ul>
-      <li> <%= @results.name %></li>
-      <li> <%= @results.price %></li>
-      <li> <%= @results.description %></li>
-    </ul>
-  </div>
+<div class="search-jam-information">
+
+<% if @pg_search_documents.nil? %>
+  <h1>Sorry, we currently don't have the jam you want.</h1>
 <% else %>
-  <h1> We found <%= @results.count %> jams for you! </h1>
+   <h1> We found <%= @pg_search_documents.count %> jams for you! </h1>
+  <ul>
+  <% @pg_search_documents.each do |pg_search_document| %>
+    <li><%= link_to pg_search_document.name, pg_search_document %></li>
+    <li> <%= pg_search_document.price %></li>
+    <li> <%= pg_search_document.description %></li>
+  <% end %>
+  </ul>
 <% end %>
+
+</div>

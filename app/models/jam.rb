@@ -10,5 +10,10 @@ class Jam < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   include PgSearch
-  pg_search_scope :search_by_name, against: [ :name ]
+  # pg_search_scope :search_by_name, against: [ :name ]
+  pg_search_scope :search_by_name, against: [ :name ], ignoring: :accents, using: {
+                    tsearch: { prefix: true },
+                    # dmetaphone: { any_word: true, sort_only: true },
+                    trigram: {}
+                  }
 end
