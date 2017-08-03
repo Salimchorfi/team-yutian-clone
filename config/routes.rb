@@ -16,8 +16,9 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {registration: 'registration', omniauth_callbacks: 'users/omniauth_callbacks'}
 
   get 'users/:id/show', :to => 'users#show', :as => :user_show
-  post 'users/:id/update', :to => 'users#update', :as => :user_update
+  post 'users/:id/update', :to => 'users#update', as: :user_update
   post '/jam/:jam_id/trade/new', to: 'trades#create', as: :new_trade
+  get '/jam/:jam_id/trade/show', to: 'trades#show', as: :show_trade
   get 'results/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

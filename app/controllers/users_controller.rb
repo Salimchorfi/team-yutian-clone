@@ -23,7 +23,6 @@
 
   def update
     @user = User.find(params[:id])
-
     @user.update_attributes(user_params)
     redirect_to user_show_path(current_user.id)  # users_path
   end
