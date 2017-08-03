@@ -16,6 +16,13 @@ class TradesController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(current_user.id)
+    @jams = Jam.where(user_id: @user.id)
+    @users_orders = Trade.where(user: @user)
+    @trade = Trade.new(user: @user, jam: @jam)
+  end
+
   def destroy
     @trade = Trade.find(params[:id])
     @trade.destroy

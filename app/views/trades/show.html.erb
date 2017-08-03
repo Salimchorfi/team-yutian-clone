@@ -1,0 +1,39 @@
+<div class="user-container">
+<div class="user-orders">
+    <h3>My Trade History</h3>
+    <% @users_orders.each do |order| %>
+    <div class="card">
+     <div class="row card-row">
+      <div class="col-xs-4 card-photo">
+        <%= link_to cl_image_tag( order.jam.photo, width: 155, height: 155, crop: :scale), jam_path(order.jam) %>
+      </div>
+      <div class="col-xs-2 card-inf">
+        <ul>
+         <li><strong><%= order.jam.name  %> </strong>  by Yutian </li>
+         <li><strong>Created at: </strong><%= order.jam.created_at.to_date.strftime('%a %d %b %Y')%> </li>
+          <% unless order.message.nil? %>
+          <li><strong>Message: </strong><%= order.message %></li>
+         <% end %>
+        </ul>
+      </div>
+       <div class="col-xs-2 card-price">
+         <strong>Price: </strong>$<%= order.jam.price %>
+       </div>
+
+      <div  class="col-xs-2 card-confirmation">
+         <% if order.confirmation %>
+           <p style="color: #F0F3B0#F98E90#FB5660">order completed </p>
+         <% else %>
+           <p style="color: #FC624D">in progress</p>
+         <% end %>
+       </div>
+
+       <div  class="col-xs-2 delete-button">
+         <div class="confirm"><%= link_to "Confirm", trade_path(order), :method => :delete %></div>
+         <div class="button-face"> Delete </div>
+       </div>
+      </div>
+  </div>
+     <% end %>
+</div>
+</div>
