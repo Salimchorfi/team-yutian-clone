@@ -31,6 +31,7 @@
   def create
     @user = User.new(user_params)
       if @user.save
+        User.creation_confirmation(@user).deliver_now
         redirect_to user_path(@user)
       else
         render :new
