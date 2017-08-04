@@ -11,14 +11,12 @@ class CommentsController < ApplicationController
     @comment.jam = @jam
     @comment.user_id = current_user.id
 
-
     if @comment.save
       respond_to do |format|
         format.html { redirect_to jam_path(@jam) }
         format.js
       end
     else
-      flash[:alert] = 'This city is currently not available.'
       respond_to do |format|
         format.html { render 'jams/show' }
         format.js
