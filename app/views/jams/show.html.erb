@@ -43,7 +43,7 @@
     <!--   Comments section -->
     <div class="comment-info"  >
     <div class="comment-box"  style="overflow-y:scroll;">
-      <ul>
+      <ul id="comments">
         <% @comments = Comment.where(:jam_id => @jam.id) %>
          <% @comments.each do |comment| %>
            <%= render 'comments/show', comment: comment%>
