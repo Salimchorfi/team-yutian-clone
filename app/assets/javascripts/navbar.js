@@ -1,8 +1,12 @@
-$("#inpt_search").on('focus', function () {
-  $(this).parent('label').addClass('active');
-});
+   $(".search").click(function () {
+      $(this).text(function(i, text){
+          return text === "Search" ? "Close" : "Search";
+      })
+      var x = document.getElementById('search-bar');
+    if (x.style.display === 'block') {
+        x.style.display = 'none';
+    } else {
+        x.style.display = 'block';
+    }
+   });
 
-$("#inpt_search").on('blur', function () {
-  if($(this).val().length == 0)
-    $(this).parent('label').removeClass('active');
-});
