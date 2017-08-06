@@ -1,6 +1,65 @@
+
+<div class="container">
+  <div id="splitlayout" class="splitlayout">
+    <div class="intro">
+      <div class="side side-left">
+        <div class="user-container">
+         <div class="information">
+          <div class="user-info">
+           <div class="avatar-info">
+           <% if @user.facebook_picture_url.nil? %>
+            <% avatar_url = "http://placehold.it/71x71" %>
+             <% else %>
+            <% avatar_url = @user.facebook_picture_url %>
+            <% end %>
+        <%= image_tag avatar_url, class: "avatar-custom" %>
+      </div>
+      <div class="avatar-name">
+        <p><strong><%= @user.email %></strong>
+          <br>
+          <%= full_name unless full_name.nil? %>
+        </p>
+      </div>
+    </div>
+    <div class="meta-info">
+      <p>
+        <br>
+        <strong>Member since: </strong>
+        <%= (@user.created_at).to_date.strftime('%B %Y') %>
+        <br>
+        <strong>Last signed in: </strong>
+        <%= time_ago_in_words(@user.last_sign_in_at)%> ago
+      </p>
+    </div>
+    <h3><strong>Update profile</strong></h3>
+    <div class="user-form">
+      <%= simple_form_for :user, url: user_update_path(current_user.id), action: :update, method: :post do |f| %>
+      <%= f.error_notification %>
+      <div class="form-inputs">
+        <%= f.input :first_name, required: false, autofocus: true,placeholder: 'First name', label: false %>
+        <%= f.input :last_name, required: false, autofocus: true,placeholder: 'Last name', label: false %>
+      </div>
+      <div class="form-actions">
+        <a><%= f.button :submit, "Apply" %></a>
+      </div>
+      <% end %>
+    </div>
+
+    <div class="user-footer">
+    <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+    </div>
+  </div>
+</div>
+      </div>
+
+
+
+
+
+      <div class="side side-right">
 <div class="user-container">
 <div class="user-orders">
-    <h3>My Trade History</h3>
+    <h3><%= @user.first_name %>'s Trade History</h3>
     <% @users_orders.each do |order| %>
     <div class="card">
      <div class="row card-row">
@@ -37,3 +96,7 @@
      <% end %>
 </div>
 </div>
+      </div>
+    </div><!-- /intro -->
+  </div><!-- /splitlayout -->
+</div><!-- /container -->
