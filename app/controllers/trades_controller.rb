@@ -26,7 +26,7 @@ class TradesController < ApplicationController
   def destroy
     @trade = Trade.find(params[:id])
     @trade.destroy
-    redirect_to jams_path
+    redirect_to user_show_path(current_user.id)
   end
 
 end

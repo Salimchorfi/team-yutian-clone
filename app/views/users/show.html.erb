@@ -1,4 +1,5 @@
 <%= render 'layouts/navbar' %>
+<div class="side side-left">
 <div class="user-container">
   <div class="information">
     <div class="user-info">
@@ -45,6 +46,46 @@
     <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
     </div>
   </div>
+</div>
+</div>
+<div class="side side-right">
+<div class="user-container">
+<div class="user-orders">
+    <h2><%= @user.first_name %>'s Trade History</h2>
+    <% @users_orders.each do |order| %>
+    <div class="card">
+
+      <div class="card-photo">
+        <%= link_to cl_image_tag( order.jam.photo, width: 155, height: 155, crop: :scale), jam_path(order.jam) %>
+      </div>
+      <div class="card-inf">
+        <ul>
+         <li><strong><%= order.jam.name  %> </strong>  by Yutian </li>
+         <li><strong>Created at: </strong><%= order.jam.created_at.to_date.strftime('%a %d %b %Y')%> </li>
+          <% unless order.message.nil? %>
+          <li><strong>Message: </strong><%= order.message %></li>
+         <% end %>
+        </ul>
+      </div>
+       <div class="card-price">
+         <strong>Price: </strong>$<%= order.jam.price %>
+       </div>
+
+      <div  class="card-confirmation">
+         <% if order.confirmation %>
+           <p style="color: #F0F3B0#F98E90#FB5660">order completed </p>
+         <% else %>
+           <p style="color: #FC624D">in progress</p>
+         <% end %>
+       </div>
+
+          <div class='delete-button'>
+            <%= link_to "", trade_path(order), :method => :delete, :class=>"but-icon fa fa-lg fa-times"%>
+          </div>
+  </div>
+     <% end %>
+</div>
+</div>
 </div>
 
 
