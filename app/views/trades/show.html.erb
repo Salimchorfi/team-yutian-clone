@@ -12,8 +12,8 @@
              <% else %>
             <% avatar_url = @user.facebook_picture_url %>
             <% end %>
-        <%= image_tag avatar_url, class: "avatar-custom" %>
-      </div>
+            <%= image_tag avatar_url, class: "avatar-custom" %>
+          </div>
       <div class="avatar-name">
         <p><strong><%= @user.email %></strong>
           <br>

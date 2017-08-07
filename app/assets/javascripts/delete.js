@@ -1,3 +1,5 @@
-$(".delete-button").on("click", function(){
-  $(this).toggleClass("activate");
-})
+$(document).ready(function() {
+  $(".delete-button").click(function() {
+    alert("Deleted");
+  });
+});
