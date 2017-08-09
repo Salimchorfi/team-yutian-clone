@@ -1,19 +1,22 @@
 <!-- Navbar -->
 <%= render 'layouts/navbar' %>
 
-<div class="index-container">
+<div class="description-container">
   <div class="index-description">
-    <span>Hello, and welcome to our community. We are here to satisfy your every jam related need. Please, make yourself at home.</span>
+    <h4>Hello, and welcome to our community. We are here to satisfy your every jam related need. Please, make yourself at home.</h4>
   </div>
-  <div class="index-title">
-    <span id="index-title">Explore jams</span>
-    <span id="index-map-title">Map</span>
-    <!-- </a> -->
-  </div>
+ <!--  <div class="index-title">
+   <span id="index-title">Explore jams</span>
+   <span id="index-map-title">Map</span>
+ </div> -->
+</div>
 
-  <div class="index-image">
-    <div class="product-row">
-      <div class="product-display product-display-50 col-xs-6" id="product">
+  <div class="index-image-container">
+   <div class="index-image-title">
+    <span id="index-image-title">Explore jams</span>
+  </div>
+    <div class="index-product-row">
+      <div class="product-display" id="product">
         <% @jams.each  do |image| %>
           <div class="product-item">
             <%= img = cl_image_tag( image.photo, width: 155, height: 155, crop: :scale) %>
@@ -21,12 +24,11 @@
           </div>
         <% end %>
       </div>
-    <div class="map-container-50 col-xs-6" id="map-container">
-      <div id="map" style="width: 105%; height: 100%;"></div>
+    <div class="map-container" id="map-container">
+      <div id="map" style="width: 100%; height: 100%;"></div>
     </div>
     </div>
   </div>
-</div>
 
 
 <% content_for(:after_js) do %>
