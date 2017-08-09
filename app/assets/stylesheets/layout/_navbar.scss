@@ -34,6 +34,7 @@
   justify-content: center;
 
 }
+form, form div { display: inline; }
 
 .nav-options span {
   padding-left: 10px;
@@ -51,17 +52,26 @@
 }
 
 /* Navbar right button */
-.navbar-wagon-button {
-  margin-left: 10px;
-  padding: 0 20px;
-  border-radius: 20em;
-  line-height: 40px;
-  background-color: #D23333;
-  color: white;
-  font-size: 14px;
-  border: 2px solid #D23333;
+.navbar-button{
+  padding: 1em;
+  border-radius: 15em;
+  line-height: 25px;
+  border: none;
+  background: none;
+  font-size: 20px;
+  font-weight: bold;
 }
-.navbar-wagon-button:hover {
+
+.navbar-search-button {
+  padding: 1em;
+  border-radius: 15em;
+  line-height: 25px;
+  border: none;
+  background: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+.navbar-button:hover {
   color: white;
   background: #D23333;
   border-color: #ac2626;

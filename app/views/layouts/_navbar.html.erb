@@ -8,15 +8,16 @@
           <% end %>
     <% if user_signed_in? %>
       <div class="nav-options">
-        <a class="search">Search</a>
-        <span><%= link_to "Profile", user_show_path(current_user.id) %></span>
-        <a ><span><%= link_to("Create", new_jam_path) %></span></a>
-        <a ><span><%= link_to('Logout', destroy_user_session_path, method: :delete) %></span></a>
+        <button class="navbar-search-button">Search</button>
+        <%= button_to "Profile",user_show_path(current_user.id),    class:  "navbar-button", method: :get %>
+        <%= button_to "Create", new_jam_path,                       class:  "navbar-button", method: :get %>
+        <%= button_to "Logout", destroy_user_session_path,
+          class:  "navbar-button", method: :delete %>
       </div>
     <% else %>
       <div class="nav-options">
-        <a class="search">Search</a>
-        <a data-toggle="modal" data-target="#login"><span>Login</span></a>
+        <button class="navbar-search-button">Search</button>
+        <button class="navbar-button" data-toggle="modal" data-target="#login">Login</button>
       </div>
     <% end %>
     <!-- Login Modal -->
