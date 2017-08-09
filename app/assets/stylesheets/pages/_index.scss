@@ -2,26 +2,29 @@
 @import "user";
 @import "log";
 
-
+.description-container{
+  height: 90px;
+  padding: 10px 7.5vw;
+}
 .index-description {
-  width: 60%;
-  font-family: helvetica;
-  font-size: 14px;
+  width: 100%;
+}
+.index-image-container{
+  width: 100%;
   padding: 10px 7.5vw;
 }
 
-#index-title {
-  position: absolute;
-  left: 7.5vw;
-  top: 10px;
-}
+#index-image-title{
+  font-weight: bold;
 
+}
 #index-map-title {
   position: absolute;
   right: 7.5vw;
   top: 10px;
   color: black;
 }
+
 
 .index-title {
   position: relative;
@@ -32,11 +35,10 @@
 }
 
 
-.product-row {
+.index-product-row {
   display: flex;
   justify-content: space-between;
-  margin: 3em 7vw;
-  margin-left: 50px;
+
 }
 
 .index-image {
@@ -51,17 +53,15 @@
 }
 
 .map-container {
-  width: 300px;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .index-price {
   font-family: helvetica;
   font-size: 14px;
   color: black;
-}
-
-.map-container-50 {
-  width: 35%
 }
 
 .image-card-50 {
@@ -76,7 +76,9 @@
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
-  width: 88%;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
   &.product-display-50 {
     width: 55%;
   }
