@@ -1,4 +1,4 @@
-   $(".search").click(function () {
+   $(".navbar-search-button").click(function () {
       $(this).text(function(i, text){
           return text === "Search" ? "Close" : "Search";
       })
