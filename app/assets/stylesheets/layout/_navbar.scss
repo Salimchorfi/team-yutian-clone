@@ -15,7 +15,6 @@
 }
 
 
-
 .navbar-search{
   position:relative;
 }
@@ -77,6 +76,12 @@ form, form div { display: inline; }
   border-color: #ac2626;
 }
 
+.navbar-search-button:hover {
+  color: white;
+  background: #D23333;
+  border-color: #ac2626;
+
+}
 /* Navbar search form */
 
 /* Navbar dropdown menu */
